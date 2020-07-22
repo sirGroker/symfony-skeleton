@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  php:
+    image: php:7.4-fpm-alpine
+    ports:
+    - 8000:8000
+    volumes:
+    - ../app:/var/www/html/my_project
+    container_name: php
