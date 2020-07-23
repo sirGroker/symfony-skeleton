@@ -21,8 +21,6 @@ RUN chown -R www-data ~/.composer
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
-#RUN mkdir my_project
-#RUN cd my_project
 WORKDIR .
 
 CMD ["symfony", "serve"]
