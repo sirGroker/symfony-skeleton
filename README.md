@@ -17,5 +17,5 @@ Start
 docker-compose up`
 
 
-[1]https://symfony.com/download
+[1]: https://symfony.com/download
 
