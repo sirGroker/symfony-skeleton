@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.1-fpm
 
 #Install extra packages
 RUN apt-get update && apt-get install -y \
@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN git config --global user.email "you@example.com"
 RUN git config --global user.name "Your Name"
+RUN git config --global --add safe.directory /var/www/html
+
 
 #Install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
@@ -19,10 +21,13 @@ RUN chown -R www-data ~/.composer
 
 #Install Symfony CLI
 RUN wget https://get.symfony.com/cli/installer -O - | bash
-RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
 
 WORKDIR .
 
-CMD ["symfony", "serve"]
+#RUN symfony new /var/www/html/
+#CMD ["symfony", "new ."]
+
+CMD ["symfony", "server:start"]
 
 EXPOSE 8000

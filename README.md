@@ -9,12 +9,25 @@ Instance based on Symfony framework for [building a microservice, console applic
 Info
 ----
 * Docker - as container
+* Docker compose - a tool for running multi-container applications.
 * Symfony CLI - as web server
+
+Install
+--
+`cd devops/
+docker compose up`
+
+`docker exec -it php_symfony_skeleton bash`
+
+`symfony new .`
+
 
 Start
 -----
 `cd devops/
 docker-compose up`
+
+
 
 
 [1]: https://symfony.com/download
