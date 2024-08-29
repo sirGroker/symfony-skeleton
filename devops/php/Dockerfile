@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
-RUN install-php-extensions gd xdebug intl
+RUN install-php-extensions gd xdebug intl pdo_mysql
 
 
 #RUN git config --global user.email "you@example.com"
